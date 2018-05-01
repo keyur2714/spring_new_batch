@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="examService" class="com.spring.service.ExamService">
+		<property name="questionService" ref="angularQuestionService"></property>
+	</bean>
+
+ 	<bean id="springQuestionService" class="com.spring.service.impl.SpringQuestionServiceImpl">
+	</bean>
+	
+	<bean id="angularQuestionService" class="com.spring.service.impl.AngularQuestionServiceImpl">
+	</bean>
+	
+	<bean id="bigDataQuestionService" class="com.spring.service.impl.BigDataQuestionServiceImpl">
+	</bean>
+
+</beans>
