@@ -3,10 +3,12 @@ package com.spring.dto;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
 @Lazy
+@Scope(value="prototype")
 public class Address implements InitializingBean{
 
 	private String address1;

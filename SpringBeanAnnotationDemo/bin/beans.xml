@@ -7,4 +7,8 @@
 
 	<context:component-scan base-package="com.spring.dto,com.spring.service"></context:component-scan>
 
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location" value="customer.properties"></property>
+	</bean>
+
 </beans>

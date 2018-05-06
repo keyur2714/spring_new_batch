@@ -6,6 +6,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.spring.configuration.Appconfiguration;
 import com.spring.dto.Customer;
+import com.spring.dto.MessageBean;
 import com.spring.service.CustomerService;
 
 public class ClientTest {
@@ -19,13 +20,28 @@ public class ClientTest {
 		
 		System.out.println(customer.getCustomerId()+" "+customer.getName()+" ");
 		
+		customer.setCustomerId(4l);
+		customer.setName("vinit");
+		
 		System.out.println(customer.getAddress().getAddress1());
 		
-		System.out.println(customer.getContact().getMobileNo());
+		customer.getAddress().setAddress1("Rozeland Society");
+		
+		//System.out.println(customer.getContact().getMobileNo());
+		
+		Customer customer1 = applicationContext.getBean("cust",Customer.class);
+		System.out.println(customer1.getCustomerId()+" "+customer1.getName()+" ");
+		
+		System.out.println(customer1.getAddress().getAddress1());
 		
 		CustomerService customerService = applicationContext.getBean("customerService",CustomerService.class);
 		
-		System.out.println(customerService.getAbstractCustometInfo());
+		//System.out.println(customerService.getAbstractCustometInfo());
+		
+		MessageBean messageBean = applicationContext.getBean("messageBean",MessageBean.class);
+		
+		System.out.println(messageBean.getMessage());
+				
 	}
 
 }

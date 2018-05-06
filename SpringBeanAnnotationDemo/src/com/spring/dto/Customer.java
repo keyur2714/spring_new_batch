@@ -3,9 +3,10 @@ package com.spring.dto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-
 @Component(value="cust")
+@Scope(value = "singleton")
 public class Customer {
 
 	private Long customerId;
@@ -21,7 +22,7 @@ public class Customer {
 		return customerId;
 	}
 
-	@Value(value = "1")
+	@Value(value = "${customer.id}")
 	public void setCustomerId(Long customerId) {
 		this.customerId = customerId;
 	}
@@ -30,7 +31,7 @@ public class Customer {
 		return name;
 	}
 
-	@Value(value = "Keyur")
+	@Value(value = "${customer.name}")
 	public void setName(String name) {
 		this.name = name;
 	}
