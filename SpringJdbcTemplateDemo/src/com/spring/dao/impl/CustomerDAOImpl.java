@@ -22,4 +22,29 @@ public class CustomerDAOImpl implements CustomerDAO{
 		return this.jdbcTemplate.query(sql, new BeanPropertyRowMapper(Customer.class));			
 	}
 
+	@Override
+	public int save(Customer customer) {
+		String sql = "insert into customer values (?,?)";
+		return this.jdbcTemplate.update(sql, new Object[] {customer.getCustomerId(),customer.getName()});	
+	}
+
+	@Override
+	public int update(Customer customer) {
+		String sql = "update customer set name=? where customer_id = ?";
+		return this.jdbcTemplate.update(sql, new Object[] {customer.getName(),customer.getCustomerId()});		
+	}
+
+	@Override
+	public int delete(int id) {
+		String sql = "delete from customer where customer_id = ?";
+		return this.jdbcTemplate.update(sql, new Object[] {id});			
+	}
+
+	@Override
+	public Customer get(long id) {
+		String sql="select * from customer where customer_id = ?";
+		return (Customer)this.jdbcTemplate.queryForObject(sql,new Object[] {id} ,new BeanPropertyRowMapper(Customer.class));		
+	}
+	
+
 }
