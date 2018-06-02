@@ -1,7 +1,7 @@
 package com.cms.dto;
 
 public class Customer {
-
+	
 	private Long customerId;
 	private String name;
 

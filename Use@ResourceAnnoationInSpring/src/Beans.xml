@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+   http://www.springframework.org/schema/beans     
+   http://www.springframework.org/schema/beans/spring-beans.xsd
+   http://www.springframework.org/schema/context 
+   http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:annotation-config />
+
+	<bean id="student" class="com.infotech.model.Student">
+		<property name="studentId" value="10001"></property>
+		<property name="studentName" value="SUdha Verma"></property>
+		<property name="phone" value="983998398"></property>
+	</bean>
+
+	<bean id="address1" class="com.infotech.model.Address">
+		<property name="addressId" value="8282"></property>
+		<property name="city" value="Pune"></property>
+		<property name="street" value="Park Street"></property>
+		<property name="zipCode" value="8238984"></property>
+	</bean>
+	
+	<bean id="address2" class="com.infotech.model.Address">
+		<property name="addressId" value="10001"></property>
+		<property name="city" value="Mumbai"></property>
+		<property name="street" value="Akshay Street"></property>
+		<property name="zipCode" value="82399994"></property>
+	</bean>
+</beans>

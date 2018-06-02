@@ -16,5 +16,7 @@
   <servlet-mapping>
   	<servlet-name>CMSDispatcherServlet</servlet-name>
   	<url-pattern>*.htm</url-pattern>
+  	<url-pattern>*.css</url-pattern>
+  	<url-pattern>*.js</url-pattern>
   </servlet-mapping>
 </web-app>
